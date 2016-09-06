@@ -1,0 +1,159 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tab"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/navi_tab_bg"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/ll_tab_yd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/tab_topbottom_margin"
+            android:paddingTop="@dimen/tab_topbottom_margin" >
+
+            <ImageView
+                android:id="@+id/img_tab_yd"
+                android:layout_width="@dimen/tab_img_width"
+                android:layout_height="@dimen/tab_img_height"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/yd_tab"
+                android:contentDescription="@string/tb_title_yd" />
+
+            <TextView
+                android:id="@+id/txt_tab_yd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/tab_imagetext_magrgin"
+                android:gravity="center_horizontal"
+                android:text="@string/tb_title_yd"
+                android:textColor="@color/tab_font_color"
+                android:textSize="@dimen/tab_font_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tab_gp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/tab_topbottom_margin"
+            android:paddingTop="@dimen/tab_topbottom_margin" >
+
+            <ImageView
+                android:id="@+id/img_tab_gp"
+                android:layout_width="@dimen/tab_img_width"
+                android:layout_height="@dimen/tab_img_height"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/gp_tab"
+                android:contentDescription="@string/tb_title_yd" />
+
+            <TextView
+                android:id="@+id/txt_tab_gp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/tab_imagetext_magrgin"
+                android:gravity="center_horizontal"
+                android:text="@string/tb_title_group"
+                android:textColor="@color/tab_font_color"
+                android:textSize="@dimen/tab_font_size" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_tab_run"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/img_tab_run"
+                android:layout_width="29dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/run_tab_press"
+                android:contentDescription="@string/tb_title_yd" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tab_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/tab_topbottom_margin"
+            android:paddingTop="@dimen/tab_topbottom_margin" >
+
+            <ImageView
+                android:id="@+id/img_tab_msg"
+                android:layout_width="@dimen/tab_img_height"
+                android:layout_height="@dimen/tab_img_height"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/msg_tab"
+                android:contentDescription="@string/tb_title_yd" />
+
+            <TextView
+                android:id="@+id/txt_tab_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/tab_imagetext_magrgin"
+                android:gravity="center_horizontal"
+                android:text="@string/tb_title_msg"
+                android:textColor="@color/tab_font_color"
+                android:textSize="@dimen/tab_font_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_tab_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/tab_topbottom_margin"
+            android:paddingTop="@dimen/tab_topbottom_margin" >
+
+            <ImageView
+                android:id="@+id/img_tab_mine"
+                android:layout_width="@dimen/tab_img_height"
+                android:layout_height="@dimen/tab_img_height"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/mine_tab"
+                android:contentDescription="@string/tb_title_yd" />
+
+            <TextView
+                android:id="@+id/txt_tab_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/tab_imagetext_magrgin"
+                android:gravity="center_horizontal"
+                android:text="@string/tb_title_mine"
+                android:textColor="@color/tab_font_color"
+                android:textSize="@dimen/tab_font_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
