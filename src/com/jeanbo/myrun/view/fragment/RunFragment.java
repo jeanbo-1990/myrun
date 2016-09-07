@@ -1,11 +1,16 @@
 package com.jeanbo.myrun.view.fragment;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadPoolExecutor.DiscardPolicy;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ZoomControls;
@@ -21,18 +26,27 @@ import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.PolygonOptions;
+import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.utils.DistanceUtil;
 import com.jeanbo.myrun.R;
 
 public class RunFragment extends Fragment {
 	private View view;
+	Button btn_beginRun;
 	MapView mMapView = null;
 	BaiduMap mBaiduMap;
 	boolean isFirstLoc = true; // 是否首次定位
+	boolean beginRun=false;//是否开始跑步
 	ImageButton ib_location;//手动定位
 
 	public LocationClient mLocationClient = null;
 	public BDLocationListener myListener = new MyLocationListener();
+	
+	//采集的点
+	List<LatLng> points=new ArrayList<LatLng>();
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,6 +60,20 @@ public class RunFragment extends Fragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
+		btn_beginRun=(Button) view.findViewById(R.id.btn_beginRun);
+		btn_beginRun.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(beginRun){
+					OverlayOptions ooRun=new PolylineOptions().width(5)
+			                .color(0xDAB73E).points(points);
+					mBaiduMap.addOverlay(ooRun);
+				}
+				beginRun=!beginRun;
+			}
+		});
 
 		// 获取地图控件引用
 		mMapView = (MapView) view.findViewById(R.id.bmapView);
@@ -131,6 +159,17 @@ public class RunFragment extends Fragment {
 					.latitude(location.getLatitude())
 					.longitude(location.getLongitude()).build();
 			mBaiduMap.setMyLocationData(locData);
+			//定位后画轨迹图
+			LatLng ll_point = new LatLng(location.getLatitude(),
+					location.getLongitude());
+			//当前位置喝上一秒的位置的距离如果大于10则不算，
+			if(points.size()>0){
+				if(DistanceUtil.getDistance(points.get(points.size()-1), ll_point)<10.00){
+					points.add(ll_point);
+				}
+			}else{
+				points.add(ll_point);
+			}
 			if (isFirstLoc) {
 				
 				LatLng ll = new LatLng(location.getLatitude(),

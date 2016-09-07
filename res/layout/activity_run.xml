@@ -201,6 +201,7 @@
             android:visibility="gone" />
 
         <Button
+            android:id="@+id/btn_beginRun"
             android:layout_width="166dp"
             android:layout_height="51dp"
             android:layout_gravity="bottom|center_horizontal"

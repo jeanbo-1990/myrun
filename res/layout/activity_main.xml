@@ -25,9 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/tab_topbottom_margin"
-            android:paddingTop="@dimen/tab_topbottom_margin" >
+            android:orientation="vertical" >
 
             <ImageView
                 android:id="@+id/img_tab_yd"
@@ -55,9 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/tab_topbottom_margin"
-            android:paddingTop="@dimen/tab_topbottom_margin" >
+            android:orientation="vertical" >
 
             <ImageView
                 android:id="@+id/img_tab_gp"
@@ -101,9 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/tab_topbottom_margin"
-            android:paddingTop="@dimen/tab_topbottom_margin" >
+            android:orientation="vertical" >
 
             <ImageView
                 android:id="@+id/img_tab_msg"
@@ -131,9 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/tab_topbottom_margin"
-            android:paddingTop="@dimen/tab_topbottom_margin" >
+            android:orientation="vertical" >
 
             <ImageView
                 android:id="@+id/img_tab_mine"

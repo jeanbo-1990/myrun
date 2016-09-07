@@ -222,7 +222,9 @@ public class MainActivity extends BaseFragmentActivity {
 			view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 			int tab_child_margin=(bg_rel_height - bg_rel_top_height- ll_tab_yd.getHeight())/2;
 			if(tab_child_margin>0){
-				view.setPadding(0, tab_child_margin, 0, tab_child_margin);
+				LinearLayout.LayoutParams lp= (android.widget.LinearLayout.LayoutParams) view.getLayoutParams();
+				lp.setMargins(0, tab_child_margin, 0, tab_child_margin);
+//				view.setPadding(0, tab_child_margin, 0, tab_child_margin);
 			}
 		}
 		
